@@ -1,0 +1,4 @@
+name: PluginChannelTest
+version: '${version}'
+main: com.github.l3nnartt.pluginchannel.PluginChannelTest
+api-version: '1.20'
