@@ -15,7 +15,7 @@ public class LabyModAPI {
    public void sendLabyModMessage(Player player, String key, final Object jsonObject) {
     byte[] bytes = LabyModMessageApi.getInstance().getBytes(key, jsonObject.toString());
     player.sendPluginMessage(PluginChannelTest.getInstance(), LabyModMessageApi.CHANNEL_NAME, bytes);
-    System.out.println("Sending message to " + player.getName() + " with key " + key + " and content " + jsonObject);
+    System.out.println("#sendLabyModMessage Sending message to " + player.getName() + " with key " + key + " and content " + jsonObject);
   }
 
   /**
@@ -30,7 +30,7 @@ public class LabyModAPI {
 
     // Send to LabyMod using the API
     sendLabyModMessage(player, "server_gamemode", object);
-    System.out.println("Sending message to " + player.getName() + " with key " + "server_gamemode" + " and content " + object);
+    System.out.println("#sendCurrentPlayingGamemode Sending message to " + player.getName() + " with key " + "server_gamemode" + " and content " + object);
   }
 
   public static LabyModAPI getInstance() {

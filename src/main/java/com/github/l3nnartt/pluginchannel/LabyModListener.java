@@ -3,7 +3,9 @@ package com.github.l3nnartt.pluginchannel;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerRegisterChannelEvent;
 import org.bukkit.plugin.messaging.PluginMessageListener;
 import org.jetbrains.annotations.NotNull;
 
@@ -17,6 +19,15 @@ public class LabyModListener implements PluginMessageListener, Listener {
 
     System.out.println("Received message from " + player.getName() + " with key " + key + " and content " + content);
     LabyModAPI.getInstance().sendCurrentPlayingGamemode(player, true, "GAMEMODE");
+    //(CraftPlayer) craftPlayer = (CraftPlayer) player; <-- need craftbukkit
+    //craftplayer.addChannel("labymod3:main");
+
+    System.out.println("#onPluginMessageReceived Sending message to " + player.getName() + " with key " + "gamemode" + " and content " + content);
+  }
+
+  @EventHandler
+  public void onPlayerRegisterChannelEvent(PlayerRegisterChannelEvent event) {
+    System.out.println("PlayerRegisterChannelEvent: " + event.getChannel());
   }
 
   //@EventHandler

@@ -20,7 +20,7 @@ repositories {
 dependencies {
     compileOnly "io.papermc.paper:paper-api:1.20.1-R0.1-SNAPSHOT"
     // add netty
-    compileOnly "io.netty:netty-all:4.1.68.Final"
+    compileOnly "io.netty:netty-all:4.1.95.Final"
 }
 
 def targetJavaVersion = 17
